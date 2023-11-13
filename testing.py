@@ -389,12 +389,12 @@ class TriangleTests(unittest.TestCase):
 
     def test_zero_perimeter(self):
         # values must be positive
-        values = [
-            (0, 0, 0),
-            (0, 1, 1),
-            (1, 0, 1),
-            (1, 1, 0)
-        ]
+        values = {
+            (0, 0, 0): 0,
+            (0, 1, 1): 2,
+            (40, 0, 40): 80,
+            (40, 12, 0): None  # triangle can't exist
+        }
         for v in values:
             self.assertIsNone(triangle.perimeter(*v))
 
